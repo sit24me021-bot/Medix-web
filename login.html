@@ -1,115 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Login</title>
-    <style>
-        body {
-            font-family: Arial;
-            background: linear-gradient(to right, #00c6ff, #0072ff);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .login-box {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 320px;
-            text-align: center;
-        }
-
-        input {
-            width: 90%;
-            padding: 10px;
-            margin: 10px;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background: #0072ff;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .small {
-            font-size: 14px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediX | Login</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
-<div class="login-box">
-    <h2>Login</h2>
+<body class="login-page">
 
-    <input type="text" id="username" placeholder="Username">
-    
-    <input type="password" id="password" placeholder="Password" id="pass">
+<div class="login-container">
 
-    <!-- Show Password -->
-    <div class="small">
-        <input type="checkbox" onclick="togglePassword()"> Show Password
+    <div class="login-left">
+
+        <a href="index.html" class="brand login-brand">
+            <span class="brand-icon">🌿</span>
+            Medi<span>X</span>
+        </a>
+
+        <div class="login-message">
+            <div class="big-leaf">🌱</div>
+
+            <h1>
+                Smarter plant care
+                starts here.
+            </h1>
+
+            <p>
+                Analyze plant diseases, monitor your plants
+                and get intelligent recommendations with MediX.
+            </p>
+        </div>
+
     </div>
 
-    <!-- Remember Me -->
-    <div class="small">
-        <input type="checkbox" id="remember"> Remember Me
+    <div class="login-right">
+
+        <div class="login-box">
+
+            <a href="index.html" class="back">
+                ← Back to Home
+            </a>
+
+            <div id="loginSection">
+
+                <div class="eyebrow">WELCOME BACK</div>
+
+                <h2>Sign in to MediX</h2>
+
+                <p class="login-subtitle">
+                    Continue to your plant health dashboard.
+                </p>
+
+                <form id="loginForm">
+
+                    <label>
+                        Email Address
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Password
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+                    </label>
+
+                    <div class="login-options">
+
+                        <label class="remember">
+                            <input
+                                type="checkbox"
+                                id="remember"
+                            >
+                            Remember me
+                        </label>
+
+                        <a href="#" id="forgotPassword">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="primary-btn full-btn"
+                    >
+                        Sign In
+                    </button>
+
+                </form>
+
+                <p class="switch">
+                    Don't have an account?
+                    <a href="#" id="showSignup">
+                        Create account
+                    </a>
+                </p>
+
+            </div>
+
+            <div id="signupSection" class="hidden">
+
+                <div class="eyebrow">GET STARTED</div>
+
+                <h2>Create your account</h2>
+
+                <p class="login-subtitle">
+                    Start your plant health journey with MediX.
+                </p>
+
+                <form id="signupForm">
+
+                    <label>
+                        Full Name
+
+                        <input
+                            type="text"
+                            id="signupName"
+                            placeholder="Your name"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Email Address
+
+                        <input
+                            type="email"
+                            id="signupEmail"
+                            placeholder="you@example.com"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Password
+
+                        <input
+                            type="password"
+                            id="signupPassword"
+                            placeholder="Create a password"
+                            minlength="4"
+                            required
+                        >
+                    </label>
+
+                    <button
+                        type="submit"
+                        class="primary-btn full-btn"
+                    >
+                        Create Account
+                    </button>
+
+                </form>
+
+                <p class="switch">
+                    Already have an account?
+                    <a href="#" id="showLogin">
+                        Sign in
+                    </a>
+                </p>
+
+            </div>
+
+            <div id="message"></div>
+
+        </div>
+
     </div>
 
-    <button onclick="login()">Login</button>
-
-    <p id="msg"></p>
 </div>
 
-<script>
-// Show password
-function togglePassword() {
-    let pass = document.getElementById("password");
-    pass.type = pass.type === "password" ? "text" : "password";
-}
-
-// Login
-function login() {
-    let user = document.getElementById("username").value;
-    let pass = document.getElementById("password").value;
-    let remember = document.getElementById("remember").checked;
-
-    if(user === "admin" && pass === "1234") {
-        
-        // Save user if remember checked
-        if(remember) {
-            localStorage.setItem("user", user);
-        }
-
-        document.getElementById("msg").style.color = "green";
-        document.getElementById("msg").innerText = "Login Successful!";
-
-        // Redirect after login
-        setTimeout(() => {
-            window.location.href = "index.html";
-        }, 1000);
-
-    } else {
-        document.getElementById("msg").style.color = "red";
-        document.getElementById("msg").innerText = "Invalid Login";
-    }
-}
-
-// Auto-fill remembered user
-window.onload = function() {
-    let savedUser = localStorage.getItem("user");
-    if(savedUser) {
-        document.getElementById("username").value = savedUser;
-    }
-}
-</script>
-
-</body>
-</html>
-</script>
+<script src="login.js"></script>
 
 </body>
 </html>
