@@ -1,113 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>AI Disease Detection</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            background: #e6e6e6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background: #d9d9d9;
-            padding: 40px;
-            border-radius: 15px;
-            width: 350px;
-            text-align: center;
-        }
-
-        h1 {
-            margin-bottom: 20px;
-        }
-
-        input {
-            margin: 15px 0;
-        }
-
-        button {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            background: green;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            font-size: 15px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: darkgreen;
-        }
-
-        .section-title {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediX | AI Plant Health</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<nav class="navbar">
+    <a href="index.html" class="brand">
+        <span class="brand-icon">🌿</span>
+        Medi<span>X</span>
+    </a>
 
-    <h1>AI Disease Detection</h1>
+    <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="login.html">Login</a>
+        <a href="login.html?signup=true" class="nav-button">Get Started</a>
+    </div>
+</nav>
 
-    <!-- Image Upload -->
-    <input type="file"><br>
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">AI-POWERED PLANT HEALTH</div>
 
-    <button onclick="detect()">Detect Disease</button>
+        <h1>
+            Detect plant diseases
+            <span>before they spread.</span>
+        </h1>
 
-    <!-- Dashboard Features -->
-    <div class="section-title">Features</div>
+        <p>
+            MediX uses AI-assisted image analysis to help identify
+            possible plant diseases and provide practical care
+            recommendations.
+        </p>
 
-    <button onclick="openFeature('animal')">Animal Detector</button>
-    <button onclick="openFeature('plant')">Plant Detector</button>
-    <button onclick="openFeature('treatment')">Treatment</button>
-    <button onclick="openFeature('blood')">Blood Report Analyzer</button>
-    <button onclick="openFeature('diet')">Diet Planner</button>
+        <div class="hero-buttons">
+            <a href="login.html?signup=true" class="primary-btn">
+                Start Free Analysis →
+            </a>
 
-    <button onclick="logout()">Logout</button>
+            <a href="#how-it-works" class="secondary-btn">
+                How It Works
+            </a>
+        </div>
 
-</div>
+        <div class="trust">
+            <span>✓ AI-assisted detection</span>
+            <span>✓ Easy to use</span>
+            <span>✓ Plant care insights</span>
+        </div>
+    </div>
 
-<script>
-function detect() {
-    alert("Disease detection running...");
-}
+    <div class="hero-card">
+        <div class="analysis-card">
+            <div class="analysis-header">
+                <strong>AI ANALYSIS</strong>
+                <span>● LIVE</span>
+            </div>
 
-function openFeature(feature) {
+            <div class="leaf-image">🌿</div>
 
-    if(feature === "animal") {
-        alert("Animal Detection Module");
-    }
+            <div class="scan-progress">
+                <div></div>
+            </div>
 
-    if(feature === "plant") {
-        alert("Plant Detection Module");
-    }
+            <div class="analysis-result">
+                <div>
+                    <small>PLANT</small>
+                    <strong>Tomato</strong>
+                </div>
 
-    if(feature === "treatment") {
-        alert("Treatment Suggestions");
-    }
+                <div>
+                    <small>CONDITION</small>
+                    <strong>Early Blight</strong>
+                </div>
 
-    if(feature === "blood") {
-        alert("Blood Report Analyzer");
-    }
+                <div class="confidence">94%</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    if(feature === "diet") {
-        alert("Diet Planner");
-    }
-}
+<section class="section" id="features">
 
-function logout() {
-    window.location.href = "login.html";
-}
-</script>
+    <div class="section-title">
+        <div class="eyebrow">WHY MEDIX</div>
+
+        <h2>Smarter tools for healthier plants</h2>
+
+        <p>
+            Everything you need to monitor and understand plant health.
+        </p>
+    </div>
+
+    <div class="feature-grid">
+
+        <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3>AI Disease Detection</h3>
+            <p>
+                Upload a plant image and analyze possible diseases
+                using an AI-powered workflow.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Health Dashboard</h3>
+            <p>
+                Monitor plant health, scans, disease detection
+                and activity from one dashboard.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>Smart Recommendations</h3>
+            <p>
+                Receive simple recommendations based on detected
+                plant conditions.
+            </p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">🌦️</div>
+            <h3>Weather Insights</h3>
+            <p>
+                Understand environmental conditions that can affect
+                your plants.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="section how-section" id="how-it-works">
+
+    <div class="section-title">
+        <div class="eyebrow">HOW IT WORKS</div>
+        <h2>Three simple steps</h2>
+    </div>
+
+    <div class="steps">
+
+        <div class="step">
+            <span>01</span>
+            <h3>Upload</h3>
+            <p>
+                Select a clear image of the affected plant leaf.
+            </p>
+        </div>
+
+        <div class="step">
+            <span>02</span>
+            <h3>Analyze</h3>
+            <p>
+                MediX processes the image through the disease
+                detection workflow.
+            </p>
+        </div>
+
+        <div class="step">
+            <span>03</span>
+            <h3>Take Action</h3>
+            <p>
+                Review the result and follow the suggested
+                plant-care recommendations.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="cta">
+    <h2>Start protecting your plants today.</h2>
+
+    <p>
+        Make plant health monitoring simpler with MediX.
+    </p>
+
+    <a href="login.html?signup=true" class="white-btn">
+        Create Your Account →
+    </a>
+</section>
+
+<footer>
+    <strong>MediX</strong>
+    <span>AI-powered plant health platform</span>
+    <span>© 2026 MediX</span>
+</footer>
 
 </body>
 </html>
